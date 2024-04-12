@@ -1,7 +1,7 @@
 #ifndef ADDRESS_H
 #define ADDRESS_H
 
-#include <Chance.hpp>
+#include "Chance.hpp"
 class Parole : public Chance {};
 
 #endif

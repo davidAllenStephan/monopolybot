@@ -5,13 +5,14 @@
 #include <SDL2/SDL_stdinc.h>
 #include <SDL2/SDL_surface.h>
 #include <iostream>
+#include "models/Board.hpp"
 
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
 
 int main() {
 
-  std::cout << "Hello" << std::endl;
+  Board *b = new Board();
 
   /**
   SDL_Rect squareRect;

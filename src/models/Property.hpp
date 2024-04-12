@@ -6,9 +6,12 @@
 
 class Property {
 public:
+  int value;
   Building buildings;
   double multiplier;
-  static void renderPropertyRow(SDL_Renderer *renderer, int direction);
+  double interest;
+  bool mortgaged;
+  int buyBack = value + (value * interest);
 };
 
 #endif
