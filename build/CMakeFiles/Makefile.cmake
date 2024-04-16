@@ -47,5 +47,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/sum_integers.dir/DependInfo.cmake"
   "CMakeFiles/Monopoly.dir/DependInfo.cmake"
+  "CMakeFiles/cpp_test.dir/DependInfo.cmake"
   )

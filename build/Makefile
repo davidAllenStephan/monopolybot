@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /Users/davidmarino/Desktop/projects/monopoly/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/opt/homebrew/Cellar/cmake/3.27.7/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake cache editor..."
@@ -117,6 +127,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named sum_integers
+
+# Build rule for target.
+sum_integers: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sum_integers
+.PHONY : sum_integers
+
+# fast build rule for target.
+sum_integers/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sum_integers.dir/build.make CMakeFiles/sum_integers.dir/build
+.PHONY : sum_integers/fast
+
+#=============================================================================
 # Target rules for targets named Monopoly
 
 # Build rule for target.
@@ -128,6 +151,43 @@ Monopoly: cmake_check_build_system
 Monopoly/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly.dir/build.make CMakeFiles/Monopoly.dir/build
 .PHONY : Monopoly/fast
+
+#=============================================================================
+# Target rules for targets named cpp_test
+
+# Build rule for target.
+cpp_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cpp_test
+.PHONY : cpp_test
+
+# fast build rule for target.
+cpp_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_test.dir/build.make CMakeFiles/cpp_test.dir/build
+.PHONY : cpp_test/fast
+
+src/SumIntegers.o: src/SumIntegers.cpp.o
+.PHONY : src/SumIntegers.o
+
+# target to build an object file
+src/SumIntegers.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sum_integers.dir/build.make CMakeFiles/sum_integers.dir/src/SumIntegers.cpp.o
+.PHONY : src/SumIntegers.cpp.o
+
+src/SumIntegers.i: src/SumIntegers.cpp.i
+.PHONY : src/SumIntegers.i
+
+# target to preprocess a source file
+src/SumIntegers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sum_integers.dir/build.make CMakeFiles/sum_integers.dir/src/SumIntegers.cpp.i
+.PHONY : src/SumIntegers.cpp.i
+
+src/SumIntegers.s: src/SumIntegers.cpp.s
+.PHONY : src/SumIntegers.s
+
+# target to generate assembly for a file
+src/SumIntegers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sum_integers.dir/build.make CMakeFiles/sum_integers.dir/src/SumIntegers.cpp.s
+.PHONY : src/SumIntegers.cpp.s
 
 src/controllers/Property.o: src/controllers/Property.cpp.o
 .PHONY : src/controllers/Property.o
@@ -201,6 +261,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly.dir/build.make CMakeFiles/Monopoly.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+test/test.o: test/test.cpp.o
+.PHONY : test/test.o
+
+# target to build an object file
+test/test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_test.dir/build.make CMakeFiles/cpp_test.dir/test/test.cpp.o
+.PHONY : test/test.cpp.o
+
+test/test.i: test/test.cpp.i
+.PHONY : test/test.i
+
+# target to preprocess a source file
+test/test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_test.dir/build.make CMakeFiles/cpp_test.dir/test/test.cpp.i
+.PHONY : test/test.cpp.i
+
+test/test.s: test/test.cpp.s
+.PHONY : test/test.s
+
+# target to generate assembly for a file
+test/test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_test.dir/build.make CMakeFiles/cpp_test.dir/test/test.cpp.s
+.PHONY : test/test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -209,7 +293,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... Monopoly"
+	@echo "... cpp_test"
+	@echo "... sum_integers"
+	@echo "... src/SumIntegers.o"
+	@echo "... src/SumIntegers.i"
+	@echo "... src/SumIntegers.s"
 	@echo "... src/controllers/Property.o"
 	@echo "... src/controllers/Property.i"
 	@echo "... src/controllers/Property.s"
@@ -219,6 +309,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... test/test.o"
+	@echo "... test/test.i"
+	@echo "... test/test.s"
 .PHONY : help
 
 

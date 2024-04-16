@@ -1,3 +1,6 @@
+/Users/davidmarino/Desktop/projects/monopoly/build/CMakeFiles/sum_integers.dir
 /Users/davidmarino/Desktop/projects/monopoly/build/CMakeFiles/Monopoly.dir
+/Users/davidmarino/Desktop/projects/monopoly/build/CMakeFiles/cpp_test.dir
+/Users/davidmarino/Desktop/projects/monopoly/build/CMakeFiles/test.dir
 /Users/davidmarino/Desktop/projects/monopoly/build/CMakeFiles/edit_cache.dir
 /Users/davidmarino/Desktop/projects/monopoly/build/CMakeFiles/rebuild_cache.dir

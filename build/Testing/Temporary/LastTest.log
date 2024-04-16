@@ -1,0 +1,18 @@
+Start testing: Apr 16 18:27 CDT
+----------------------------------------------------------
+1/1 Testing: cpp_test
+1/1 Test: cpp_test
+Command: "/Users/davidmarino/Desktop/projects/monopoly/build/cpp_test"
+Directory: /Users/davidmarino/Desktop/projects/monopoly/build
+"cpp_test" start time: Apr 16 18:27 CDT
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.07 sec
+----------------------------------------------------------
+Test Passed.
+"cpp_test" end time: Apr 16 18:27 CDT
+"cpp_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Apr 16 18:27 CDT
