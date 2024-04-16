@@ -1,0 +1,3 @@
+/Users/davidmarino/Desktop/projects/monopoly/build/CMakeFiles/Monopoly.dir
+/Users/davidmarino/Desktop/projects/monopoly/build/CMakeFiles/edit_cache.dir
+/Users/davidmarino/Desktop/projects/monopoly/build/CMakeFiles/rebuild_cache.dir

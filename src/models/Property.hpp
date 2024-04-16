@@ -2,16 +2,34 @@
 #define PROPERTY_H
 
 #include "Building.hpp"
-#include <SDL2/SDL_render.h>
+#include <string>
+
+using namespace std;
 
 class Property {
 public:
-  int value;
-  Building buildings;
-  double multiplier;
-  double interest;
+  string title;
+  int price;
+  int mortgage_value;
+  int base_rent;
+  int set_rent;
+  int one_house_rent;
+  int two_house_rent;
+  int three_house_rent;
+  int four_house_rent;
+  int five_house_rent;
+  int house_cost;
+  int hotel_cost;
+  int building_cost;
+  string color;
+  Building *buildings;
   bool mortgaged;
-  int buyBack = value + (value * interest);
+
+  Property();
+  Property(string title, int price, int mortgage_value, int base_rent,
+           int set_rent, int one_house_rent, int two_house_rent,
+           int three_house_rent, int four_house_rent, int five_house_rent,
+           int house_cost, int hotel_cost, int building_cost, string color);
 };
 
 #endif

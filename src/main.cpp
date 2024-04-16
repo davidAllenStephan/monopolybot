@@ -1,18 +1,34 @@
+#include "csv/CsvManager.h"
+#include "models/Corner.hpp"
 #include "models/Property.hpp"
+#include "models/Special.hpp"
+#include "models/Tax.hpp"
 #include <SDL.h>
 #include <SDL2/SDL_pixels.h>
 #include <SDL2/SDL_render.h>
 #include <SDL2/SDL_stdinc.h>
 #include <SDL2/SDL_surface.h>
 #include <iostream>
-#include "models/Board.hpp"
 
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
 
-int main() {
+using namespace std;
 
-  Board *b = new Board();
+int main(int argc, char *argv[]) {
+
+  CsvManager cm;
+  list<Property> properties = cm.objectify(argv[1]);
+
+  list<Property>::iterator it;
+
+  for (it = properties.begin(); it != properties.end(); it++) {
+    cout << it->title << endl;
+  }
+
+  Special *specials = new Special();
+  Tax *taxes = new Tax();
+  Corner *corners = new Corner();
 
   /**
   SDL_Rect squareRect;
